@@ -6,7 +6,16 @@ version = 3
 name = "m6parserkit"
 version = "0.1.0"
 dependencies = [
- "proc-macros",
+ "m6parserkit-proc-macros",
+]
+
+[[package]]
+name = "m6parserkit-proc-macros"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]
@@ -16,15 +25,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ec757218438d5fda206afc041538b2f6d889286160d649a86a24d37e1235afd1"
 dependencies = [
  "unicode-xid",
-]
-
-[[package]]
-name = "proc-macros"
-version = "0.1.0"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
 ]
 
 [[package]]

@@ -15,6 +15,7 @@ impl Parse for GenSyntaxEnum {
         let visib = input.parse::<Visibility>()?;
         input.parse::<Token![|]>()?;
         let names = input.parse_terminated(Ident::parse)?;
+        input.parse::<Token![|]>()?;
 
         Ok(Self { visib, names })
     }

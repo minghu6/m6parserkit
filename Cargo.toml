@@ -9,7 +9,7 @@ edition = "2021"
 
 
 [dependencies.proc_macros]
-package = "proc-macros"
+package = "m6parserkit-proc-macros"
 path = "proc_macros"
 
 [workspace]
