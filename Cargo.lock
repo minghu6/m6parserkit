@@ -7,6 +7,7 @@ name = "m6parserkit"
 version = "0.1.0"
 dependencies = [
  "m6parserkit-proc-macros",
+ "m6stack",
 ]
 
 [[package]]
@@ -17,6 +18,12 @@ dependencies = [
  "quote",
  "syn",
 ]
+
+[[package]]
+name = "m6stack"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3b5bbdeb531bcff144fccef3bd1c990a919f2279770746400e9ce38325ff4702"
 
 [[package]]
 name = "proc-macro2"
