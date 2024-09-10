@@ -1,5 +1,5 @@
-#![feature(box_syntax)]
 #![feature(type_alias_impl_trait)]
+#![feature(let_chains)]
 
 pub use proc_macros::*;
 pub use infix_expr::*;

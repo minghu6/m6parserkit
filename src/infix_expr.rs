@@ -15,7 +15,7 @@ pub struct BopWrapper<T> {
 impl<T> BopWrapper<T> {
     pub fn new(value: T, prec: i32) -> Self {
         Self {
-            value: box value,
+            value: Box::new(value),
             prec
         }
     }
@@ -43,12 +43,12 @@ pub enum InfixExpr<O, T> {
 
 impl<O, T> InfixExpr<O, T> {
     fn combine(self, bop: O, pri2: Self) -> Self {
-        Self::T { bop, pri1: box self, pri2: box pri2 }
+        Self::T { bop, pri1: Box::new(self), pri2: Box::new(pri2) }
     }
 }
 
 
-/// Return Reverse Polish Notation (RPN) form
+/// Return Reverse Polish Notation (RPN) form (or Post-order, LRN(left right node) traversal)
 pub fn parse_infix_expr<O: Bop, T>(bops: Vec<O>, pris: Vec<T>) -> InfixExpr<O, T> {
     debug_assert_eq!(bops.len() + 1, pris.len());
     debug_assert!(bops.len() > 0);

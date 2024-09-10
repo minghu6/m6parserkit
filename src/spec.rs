@@ -289,20 +289,20 @@ fn tokenize(src: &str) -> TokenizeResult {
 }
 
 
-pub type CounterType = impl FnMut() -> usize;
+pub type CounterType = Box<dyn FnMut() -> usize>;
 
 fn gen_counter() -> CounterType {
-    gen_counter_1(1)
+    Box::new(gen_counter_1(1))
 }
 
 fn gen_counter_1(init: usize) -> CounterType {
     let mut count = init;
 
-    move || {
+    Box::new(move || {
         let old_count = count;
         count += 1;
         old_count
-    }
+    })
 }
 
 
